@@ -24,6 +24,9 @@ class _EvenOddState extends State<EvenOdd> {
   String oddNumber = "";
 
   even() {
+    evenNumber = "";
+    count = 0;
+
     str1 = firstNoController.text;
     str2 = secondNoController.text;
     num1 = int.parse(str1);
@@ -42,6 +45,9 @@ class _EvenOddState extends State<EvenOdd> {
   }
 
   odd() {
+
+    oddNumber = "";
+    count = 0;
     str1 = firstNoController.text;
     str2 = secondNoController.text;
     num1 = int.parse(str1);
@@ -75,12 +81,12 @@ class _EvenOddState extends State<EvenOdd> {
                 const SizedBox(
                   height: 100,
                 ),
-                Text("Find Even Odd", style: TextStyle(
+                const Text("Find Even Odd", style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.w900,
                   fontSize: 25,
-                 // fontWeight: FontWeight.bold,
-                ),),
+                ),
+                ),
                 const SizedBox(
                   height: 100,
                 ),
