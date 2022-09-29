@@ -27,7 +27,7 @@ class _EvenOddState extends State<EvenOdd> {
     num1 = int.parse(str1);
     num2 = int.parse(str2);
 
-    for (num1 = num1 + 1; num1 < num2; num1++) {
+    for (num1 = num1 +1; num1 < num2; num1++) {
       if (num1 % 2 == 0) {
         evenNumber = "$evenNumber $num1 ";
         count++;
@@ -35,8 +35,7 @@ class _EvenOddState extends State<EvenOdd> {
     }
 
     setState(() {
-      strResult =
-          "Even no count is $count" " \tEven numbers are is $evenNumber";
+      strResult = "Even no count is $count"  " \tEven numbers are is $evenNumber";
     });
   }
 
@@ -49,7 +48,7 @@ class _EvenOddState extends State<EvenOdd> {
     for (num1 = num1; num1 < num2; num1++) {
       if (num1 % 2 != 0) {
         oddNumber = "$oddNumber $num1";
-       // count++;
+        count++;
       }
     }
 
@@ -72,6 +71,14 @@ class _EvenOddState extends State<EvenOdd> {
             padding: const EdgeInsets.all(30.0),
             child: Column(
               children: [
+
+                const SizedBox(
+                  height: 100,
+                ),
+                Text("Find Even Odd", style: TextStyle(
+                  fontSize: 25,
+                 // fontWeight: FontWeight.bold,
+                ),),
                 const SizedBox(
                   height: 100,
                 ),
