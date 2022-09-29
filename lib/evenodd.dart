@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 class EvenOdd extends StatefulWidget {
@@ -76,6 +78,8 @@ class _EvenOddState extends State<EvenOdd> {
                   height: 100,
                 ),
                 Text("Find Even Odd", style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w900,
                   fontSize: 25,
                  // fontWeight: FontWeight.bold,
                 ),),
