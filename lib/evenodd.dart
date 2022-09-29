@@ -64,10 +64,8 @@ class _EvenOddState extends State<EvenOdd> {
     return Material(
       child: Container(
         decoration: const BoxDecoration(
-            image: DecorationImage(
-          image: AssetImage("assets/kal.jpeg"),
-          fit: BoxFit.cover,
-        )),
+          color: Colors.amber
+         ),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(30.0),
@@ -102,7 +100,7 @@ class _EvenOddState extends State<EvenOdd> {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  height: 50,
+                  height: 100,
                   width: 300,
                   child: Text(
                     strResult,
