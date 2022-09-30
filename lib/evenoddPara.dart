@@ -1,17 +1,15 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
-class EvenOdd extends StatefulWidget {
-  const EvenOdd({Key? key}) : super(key: key);
+class evenOddPara extends StatefulWidget {
+  const evenOddPara({Key? key}) : super(key: key);
 
   @override
-  State<EvenOdd> createState() => _EvenOddState();
+  State<evenOddPara> createState() => _evenOddParaState();
 }
 
-class _EvenOddState extends State<EvenOdd> {
-  final firstNoController = TextEditingController();
-  final secondNoController = TextEditingController();
+class _evenOddParaState extends State<evenOddPara> {
+  final firstNoControllerPara = TextEditingController();
+  final secondNoControllerPara = TextEditingController();
 
   String strResult = "";
   String str1 = "";
@@ -20,15 +18,14 @@ class _EvenOddState extends State<EvenOdd> {
   int num1 = 0;
   int num2 = 0;
   int count = 0;
+
   String evenNumber = "";
   String oddNumber = "";
 
-  even() {
+  even(str1,str2) {
     evenNumber = "";
     count = 0;
 
-    str1 = firstNoController.text;
-    str2 = secondNoController.text;
     num1 = int.parse(str1);
     num2 = int.parse(str2);
 
@@ -44,12 +41,10 @@ class _EvenOddState extends State<EvenOdd> {
     });
   }
 
-  odd() {
+  odd(str1,str2) {
 
     oddNumber = "";
     count = 0;
-    str1 = firstNoController.text;
-    str2 = secondNoController.text;
     num1 = int.parse(str1);
     num2 = int.parse(str2);
 
@@ -64,14 +59,13 @@ class _EvenOddState extends State<EvenOdd> {
       strResult = "Odd no count is $count" "\tOdd numbers are is $oddNumber";
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Container(
         decoration: const BoxDecoration(
-          color: Colors.amber
-         ),
+            color: Colors.amber
+        ),
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(30.0),
@@ -91,14 +85,14 @@ class _EvenOddState extends State<EvenOdd> {
                   height: 100,
                 ),
                 TextField(
-                  controller: firstNoController,
+                  controller: firstNoControllerPara,
                   decoration: const InputDecoration(hintText: "From"),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 TextField(
-                  controller: secondNoController,
+                  controller: secondNoControllerPara,
                   decoration: const InputDecoration(hintText: "To"),
                 ),
                 const SizedBox(
@@ -122,7 +116,7 @@ class _EvenOddState extends State<EvenOdd> {
                     children: [
                       ElevatedButton(
                           onPressed: () {
-                            even();
+                            even(firstNoControllerPara.text,secondNoControllerPara.text);
                             // setState(() {
                             //   even();
                             // });
@@ -131,9 +125,9 @@ class _EvenOddState extends State<EvenOdd> {
                       const Spacer(),
                       ElevatedButton(
                           onPressed: () {
-                            setState(() {
-                              odd();
-                            });
+                            //setState(() {
+                              odd(firstNoControllerPara.text,secondNoControllerPara.text);
+                            //});
                           },
                           child: const Text("Odd")),
                     ],

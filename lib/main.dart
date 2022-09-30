@@ -1,5 +1,8 @@
+import 'package:find/calc_screen_parameter.dart';
 import 'package:find/calcscreen.dart';
+import 'package:find/divisibleByFive.dart';
 import 'package:find/evenodd.dart';
+import 'package:find/evenoddPara.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,10 +19,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
                       ),
-      initialRoute: "/",
+      initialRoute: "/divisibleByFive",
       routes: {
-        "/": (context) => const EvenOdd(),
+        "/evenOdd": (context) => const EvenOdd(),
+        "/evenOddPara": (context) => const evenOddPara(),
         "/calculate": (context) => const Calcu(),
+        "/calPara": (context) => CalPara(),
+        "/divisibleByFive": (context) => DivisibelByFive(),
       },
     );
   }
