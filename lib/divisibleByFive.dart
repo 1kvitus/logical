@@ -1,8 +1,5 @@
-import 'dart:ffi';
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:numberpicker/numberpicker.dart';
-
 
 class DivisibelByFive extends StatefulWidget {
   const DivisibelByFive({Key? key}) : super(key: key);
@@ -12,6 +9,8 @@ class DivisibelByFive extends StatefulWidget {
 }
 
 class _DivisibelByFiveState extends State<DivisibelByFive> {
+//  final itemValue = [1,2,3,4,5,6,7,8,9];
+
   final firstController = TextEditingController();
   final secondController = TextEditingController();
 
@@ -38,8 +37,9 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
         count++;
       }
     }
-    setState((){
-      result = "Total Numbers Divisible by 5 are  $count" "\tand Numbers are $value ";
+    setState(() {
+      result = "Total Numbers Divisible by 5 are  $count"
+          "\tand Numbers are $value ";
     });
   }
 
@@ -93,14 +93,18 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
                 const SizedBox(
                   height: 50,
                 ),
-                // ElevatedButton(
-                //     onPressed: () {
-                //       five(firstController.text, secondController.text);
-                //     },
-                //     child: const Text("Divisible 5")),
-                NumberPicker(minValue: 1, maxValue: 10, value: 1 , onChanged: (value){
-                  five(firstController.text, secondController.text);
-                })
+                ElevatedButton(
+                    onPressed: () {
+                      five(firstController.text, secondController.text);
+                    },
+                    child: const Text("Divisible 5")),
+                // NumberPicker(minValue: 1, maxValue: 10, value: 1, onChanged: (value)async{
+                //  setState((){
+                //    if(value == 5) {
+                //      five(firstController.text, secondController.text);
+                //    }
+                //  });
+                // })
               ],
             ),
           ),
