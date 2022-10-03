@@ -13,6 +13,8 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
 
   final firstController = TextEditingController();
   final secondController = TextEditingController();
+  final thirdController = TextEditingController();
+
 
   var value = "";
   var result = "";
@@ -20,27 +22,35 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
 
   var str1 = "";
   var str2 = "";
+  var str3 = "";
 
   int num1 = 0;
   int num2 = 0;
+  int num3 = 0;
 
-  five(str1, str2) {
+  find(str1, str2, str3) {
     value = "";
     count = 0;
 
     num1 = int.parse(str1);
     num2 = int.parse(str2);
+    num3 = int.parse(str3);
 
     for (num1 = num1; num1 < num2; num1++) {
-      if (num1 % 5 == 0) {
+      if (num1 % num3 == 0) {
         value = "$value $num1";
         count++;
+        setState(() {
+          result = "Total Numbers Divisible by $num3 are  $count"
+              "\tand Numbers are $value ";
+        });
+      }else if (num2 > 300) {
+        value = "$num2";
+        setState(() {
+          result = "can't find $value, range should be from 1 to 300";
+        });
       }
     }
-    setState(() {
-      result = "Total Numbers Divisible by 5 are  $count"
-          "\tand Numbers are $value ";
-    });
   }
 
   @override
@@ -79,6 +89,13 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
                   decoration: const InputDecoration(hintText: "To"),
                 ),
                 const SizedBox(
+                  height: 30,
+                ),
+                TextField(
+                  controller: thirdController,
+                  decoration: const InputDecoration(hintText: "Divisible by"),
+                ),
+                const SizedBox(
                   height: 50,
                 ),
                 Container(
@@ -95,9 +112,9 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
                 ),
                 ElevatedButton(
                     onPressed: () {
-                      five(firstController.text, secondController.text);
+                      find(firstController.text, secondController.text, thirdController.text);
                     },
-                    child: const Text("Divisible 5")),
+                    child: const Text("Calculate")),
                 // NumberPicker(minValue: 1, maxValue: 10, value: 1, onChanged: (value)async{
                 //  setState((){
                 //    if(value == 5) {
@@ -105,6 +122,7 @@ class _DivisibelByFiveState extends State<DivisibelByFive> {
                 //    }
                 //  });
                 // })
+
               ],
             ),
           ),
